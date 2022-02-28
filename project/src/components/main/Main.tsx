@@ -1,10 +1,10 @@
 import React from 'react';
-import CardFilm from '../cardFilm/Card';
+import CardFilm from '../card/Card';
 import { filmsData } from './films-data';
 import { CardData } from '../types';
 
 function Main(): JSX.Element {
-  const getCards = (data: CardData[]) => data.map((card) => <CardFilm title={card.title} link={card.link} key={`card-${card.title}`}/>);
+  const getCards = (data: CardData[]): JSX.Element[] => data.map((card) => <CardFilm title={card.title} link={card.link} key={`card-${card.title}`}/>);
   return (
     <React.Fragment>
       <div className='visually-hidden'>
