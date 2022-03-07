@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardData } from '../types';
+import { CardData } from '../../types';
 
 function CardFilm({title, link }: CardData): JSX.Element {
   return (

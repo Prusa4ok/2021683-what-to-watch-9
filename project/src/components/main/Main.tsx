@@ -1,10 +1,10 @@
 import React from 'react';
-import CardFilm from '../card/Card';
-import { filmsData } from './films-data';
-import { CardData } from '../types';
+import CardFilm from '../card/card';
+import { filmsData } from '../../use/const';
+import { FilmInfoProps } from '../../types';
+import MainHeader from '../main-header/main-header';
 
-function Main(): JSX.Element {
-  const getCards = (data: CardData[]): JSX.Element[] => data.map((card) => <CardFilm title={card.title} link={card.link} key={`card-${card.title}`}/>);
+function Main({genre, name, year}: FilmInfoProps): JSX.Element {
   return (
     <React.Fragment>
       <div className='visually-hidden'>
@@ -77,28 +77,8 @@ function Main(): JSX.Element {
               <img src='img/the-grand-budapest-hotel-poster.jpg' alt='The Grand Budapest Hotel poster' width='218' height='327' />
             </div>
 
-            <div className='film-card__desc'>
-              <h2 className='film-card__title'>The Grand Budapest Hotel</h2>
-              <p className='film-card__meta'>
-                <span className='film-card__genre'>Drama</span>
-                <span className='film-card__year'>2014</span>
-              </p>
+            <MainHeader genre={genre} name={name} year={year} />
 
-              <div className='film-card__buttons'>
-                <button className='btn btn--play film-card__button' type='button'>
-                  <svg viewBox='0 0 19 19' width='19' height='19'>
-                    <use xlinkHref='#play-s'></use>
-                  </svg>
-                  <span>Play</span>
-                </button>
-                <button className='btn btn--list film-card__button' type='button'>
-                  <svg viewBox='0 0 19 20' width='19' height='20'>
-                    <use xlinkHref='#add'></use>
-                  </svg>
-                  <span>My list</span>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -142,7 +122,7 @@ function Main(): JSX.Element {
 
           <div className='catalog__films-list'>
             {
-              getCards(filmsData)
+              filmsData.map((card) => <CardFilm title={card.title} link={card.link} key={`card-${card.title}`}/>)
             }
           </div>
 
