@@ -3,7 +3,7 @@ import PrivateRoute from '../../hooks/PrivateRoute';
 import { AppRoute } from '../../use/routes';
 import AddReview from '../addReview/AddReview';
 import FilmPage from '../film-page/film-page';
-import Main from '../main/main';
+import Main from '../main/Main';
 import MyList from '../myList/MyList';
 import PageNotFound from '../page-not-found/page-not-found';
 import Player from '../player/Player';

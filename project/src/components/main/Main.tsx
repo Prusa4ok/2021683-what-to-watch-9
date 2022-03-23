@@ -1,5 +1,5 @@
 import React from 'react';
-import CardFilm from '../card/card';
+import CardFilm from '../card/Card';
 import { filmsData } from '../../use/const';
 import { FilmInfoProps } from '../../types';
 import MainHeader from '../main-header/main-header';
